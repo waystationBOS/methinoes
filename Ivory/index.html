@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Obituary - Ivory Methinoes (Jennifer Selzler)</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; scroll-behavior: smooth; }
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #fff0f5, #ffe6f2);
+    color: #333;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Floral tooth side graphics */
+body::before, body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    background-image: url('https://i.postimg.cc/tCc6QfJD/floral-tooth.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 0;
+    opacity: 0.2;
+}
+body::after { right: 0; transform: scaleX(-1); }
+
+/* Header slideshow */
+header { position: relative; height: 500px; overflow: hidden; color: #fff; text-align: center; z-index: 1; border-radius: 0 0 30px 30px; }
+header .slide { position: absolute; top:0; left:0; width:100%; height:100%; background-size: cover; background-position: center; opacity: 0; animation: slidefade 24s infinite; }
+header .slide:nth-child(1) { background-image: url('https://i.postimg.cc/N5NPyyL2/your-image.jpg'); animation-delay: 0s; }
+header .slide:nth-child(2) { background-image: url('https://i.postimg.cc/9rSY5yrZ/your-image.jpg'); animation-delay: 6s; }
+header .slide:nth-child(3) { background-image: url('https://i.postimg.cc/hQXQp38r/your-image.jpg'); animation-delay: 12s; }
+header .slide:nth-child(4) { background-image: url('https://i.postimg.cc/FdRYHn6K/your-image.jpg'); animation-delay: 18s; }
+@keyframes slidefade {
+    0% { opacity: 0; } 5% { opacity: 1; } 25% { opacity: 1; } 30% { opacity: 0; } 100% { opacity: 0; }
+}
+header .overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.4); }
+header h1, header p { position: relative; z-index: 2; margin: 0; padding-top: 180px; opacity: 0; animation: fadeInText 2s forwards 1s; font-family: 'Playfair Display', serif; text-shadow: 2px 2px 6px rgba(0,0,0,0.5); }
+header p { font-family: 'Pacifico', cursive; font-size: 1.8em; color: #fff; animation-delay: 2s; }
+
+/* Face image over header text */
+header h1::before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-image: url('https://i.postimg.cc/N5NPyyL2/your-image.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid #fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+@keyframes fadeInText { to { opacity: 1; } }
+
+nav {
+    display: flex;
+    justify-content: center;
+    background: #ff69b4;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    border-radius: 10px;
+    margin: 10px 50px;
+}
+nav a {
+    margin: 0 20px;
+    padding: 15px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+    transition: all 0.3s;
+}
+nav a:hover { color: #ffd700; transform: scale(1.1); }
+
+main { max-width: 1000px; margin: 50px auto; padding: 0 20px; position: relative; z-index: 1; }
+
+.section {
+    margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease-out;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
+}
+.section.visible { opacity: 1; transform: translateY(0); }
+
+.section h2 { font-family: 'Playfair Display', serif; border-bottom: 4px solid #ff69b4; padding-bottom: 10px; margin-bottom: 20px; color: #ff1493; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
+
+.bio p { line-height: 1.9; font-size: 1.15em; color: #333; }
+
+.carousel-wrapper { overflow: hidden; position: relative; border-radius: 15px; }
+.carousel { display: flex; gap: 20px; }
+.carousel img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.6s, box-shadow 0.6s;
+    cursor: pointer;
+}
+.carousel img:hover { transform: scale(1.2) rotate(2deg); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+
+.timeline { position: relative; margin-left: 30px; padding-left: 30px; border-left: 4px solid #ff69b4; }
+.timeline-event { margin-bottom: 35px; position: relative; font-family: 'Roboto', sans-serif; }
+.timeline-event::before { content: ''; position: absolute; left: -12px; top: 0; width: 25px; height: 25px; background-color: #ff69b4; border-radius: 50%; box-shadow: 0 0 10px rgba(0,0,0,0.2); }
+
+blockquote { background: #fff0f5; border-left: 6px solid #ff1493; color: #800080; padding: 20px; border-radius: 15px; margin: 25px 0; font-style: italic; font-family: 'Playfair Display', serif; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+footer { background: #4b0082; color: #fff; text-align: center; padding: 50px 20px; font-family: 'Playfair Display', serif; position: relative; z-index: 1; }
+footer a { color: #ffeb3b; margin: 0 10px; text-decoration: none; transition: all 0.3s; }
+footer a:hover { color: #fff; transform: scale(1.1); }
+
+/* Cherry blossom petals */
+.petal {
+    position: fixed;
+    top: -40px;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle at 50% 50%, #ffb7c5 0%, #fff 70%);
+    clip-path: polygon(
+        50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%,
+        50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
+    ); /* 5-petal blossom shape */
+    opacity: 0.8;
+    animation: fall linear infinite;
+    z-index: 0;
+}
+@keyframes fall {
+    0% { transform: translateY(-50px) rotate(0deg) scale(0.8); opacity: 0.8; }
+    100% { transform: translateY(110vh) rotate(360deg) scale(1); opacity: 0.5; }
+}
+</style>
+</head>
+<body>
+
+<audio id="memorialMusic" autoplay loop>
+    <source src="soft-memorial-music.mp3" type="audio/mpeg">
+</audio>
+
+<header>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="overlay"></div>
+    <h1>Ivory Methinoes (Jennifer Selzler)</h1>
+    <p>March 15, 1990 – November 10, 2025</p>
+</header>
+
+<nav>
+    <a href="#bio">Biography</a>
+    <a href="#gallery">Photos</a>
+    <a href="#timeline">Life Events</a>
+    <a href="#memorial">Memorial</a>
+</nav>
+
+<main>
+    <section id="bio" class="section bio">
+        <h2>Biography</h2>
+        <p>Ivory Methinoes (Jennifer Selzler), horrible mother, grandtroll, and skank, was known for her tailpipe, teeth, and Methaddictness. Born in Teeth, Ivory spent her life shitting on ians idea and pursuing her passions of club, Slinging, and Shitbox.</p>
+        <p>She will not be missed by all who knew her.</p>
+    </section>
+
+    <section id="gallery" class="section">
+        <h2>Photo Gallery</h2>
+        <div class="carousel-wrapper">
+            <div class="carousel" id="carousel">
+                <img src="https://i.postimg.cc/N5NPyyL2/your-image.jpg" alt="Ivory with family">
+                <img src="https://i.postimg.cc/9rSY5yrZ/your-image.jpg" alt="Ivory gardening">
+                <img src="https://i.postimg.cc/hQXQp38r/your-image.jpg" alt="Ivory at work">
+                <img src="https://i.postimg.cc/FdRYHn6K/your-image.jpg" alt="Ivory traveling">
+                <img src="https://i.postimg.cc/kB8BGSTQ/your-image.jpg" alt="Ivory with friends">
+                <img src="https://i.postimg.cc/3dMxsR3T/your-image.jpg" alt="Ivory at an event">
+                <img src="https://i.postimg.cc/75Z8d8J7/your-image.jpg" alt="Ivory celebrating">
+                <img src="https://i.postimg.cc/Wqvx7QPF/your-image.jpg" alt="Ivory smiling">
+            </div>
+        </div>
+    </section>
+
+    <section id="timeline" class="section">
+        <h2>Life Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-event"><h3>1950</h3><p>Born in Teeth, USA.</p></div>
+            <div class="timeline-event"><h3>1972</h3><p>Graduated from teeth University with a degree in Shooting meth.</p></div>
+            <div class="timeline-event"><h3>1975</h3><p>Married and started a family.</p></div>
+            <div class="timeline-event"><h3>2025</h3><p>Passed away Sad and miserable surrounded by hated ones.</p></div>
+        </div>
+    </section>
+
+    <section id="memorial" class="section">
+        <h2>Memorial Messages</h2>
+        <blockquote>"Ivory had a heart of meth. She always jumped and slinged the bag." – Jesse </blockquote>
+        <blockquote>"We will live in fear the memories of her laughter and cackling forever." – Michael bjerke</blockquote>
+        <p>A private forgeting service will be held on November 15, 2025. A public celebration of death will follow on November 20, 2025, at Meth Community Center.</p>
+    </section>
+</main>
+
+<footer>
+    <p>In loving memory of Ivory Methinoes (Jennifer Selzler)</p>
+    <div>
+        <a href="#">Share on Meth.com</a>
+        <a href="#">Share on Tor</a>
+        <a href="#">Tweakersorless.com</a>
+        <a href="#">Loliporn@Exavator.tor</a>
+    </div>
+</footer>
+
+<script>
+// Fade in sections
+const sections = document.querySelectorAll('.section');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){ entry.target.classList.add('visible'); }
+    });
+},{ threshold: 0.2 });
+sections.forEach(section => observer.observe(section));
+
+// Music
+const music = document.getElementById('memorialMusic');
+music.volume = 0.2;
+
+// Infinite carousel scroll
+const carousel = document.getElementById('carousel');
+let scrollPos = 0;
+function infiniteScroll() {
+    scrollPos += 0.5;
+    if(scrollPos >= carousel.scrollWidth / 2) scrollPos = 0;
+    carousel.style.transform = `translateX(-${scrollPos}px)`;
+    requestAnimationFrame(infiniteScroll);
+}
+infiniteScroll();
+
+// Cherry blossom petals
+for(let i=0; i<15; i++){
+    const petal = document.createElement('div');
+    petal.className = 'petal';
+    petal.style.left = Math.random() * 100 + 'vw';
+    petal.style.animationDuration = (5 + Math.random()*5) + 's';
+    petal.style.animationDelay = Math.random()*5 + 's';
+    document.body.appendChild(petal);
+}
+</script>
+
+</body>
+</html>
